@@ -1,4 +1,4 @@
-# Horizontal List With Swipe 
+# Horizontal List With Multiple Items
 
 ## Main Dependencies
 
@@ -34,15 +34,31 @@
 
    ref: [how to fix the missing ending padding](https://webplatform.news/issues/2019-08-07)
   
-  ### Do I have to use flexbox to implement this swiping feature?
-  
-  No! You can implement it using grid too. It is my personal preference. Also, flexbox supports more browsers than grid. (flexbox: 99.18% supported and grid: 95.86% supported at 15/12/2020) 
-    
-  refs: [browser support for flex](https://caniuse.com/?search=flex), [browser support for grid](https://caniuse.com/?search=grid)
-  
   ### Swiping is not smooth on mobile. How do I fix that?
   
   You need to install the polyfill to make swiping smooth. install the following dependencies.
   
   * [smoothscroll-polyfill](https://www.npmjs.com/package/smoothscroll-polyfill)
   * [@types/smoothscroll-polyfill](https://www.npmjs.com/package/@types/smoothscroll-polyfill) (if you use TS)
+  
+  ### How do I check an element has scrollbar or not?
+   
+  You need to compare 'scrollWidth' with 'clientWidth' on the target element. If 'scrollWidth' value is larger than 'clientWidth', it has a scrollbar.
+  
+  * [Check whether HTML element has scrollbars](https://stackoverflow.com/questions/4880381/check-whether-html-element-has-scrollbars)
+  
+  ### How to hide scrollbar?
+  
+  You can achieve this using CSS.
+  ```
+    /* hide scroll (horizontal) bar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+   
+    &::-webkit-scrollbar { /* WebKit */
+      width: 0;
+      height: 0;
+    }
+  ```
+  Still appear?
+  * [additional ref](https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll)
