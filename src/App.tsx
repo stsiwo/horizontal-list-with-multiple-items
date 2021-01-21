@@ -49,10 +49,10 @@ const SliderInnerBox = styled.div`
 const ListItem = styled.a`
   display: block;
   flex: 0 0 290px; 
-  margin: 0 5px;
-  background: aqua;
+  margin: 5px;
   border-radius: 10px;
   box-shadow: 5px 5px 16px grey;
+  text-align: center;
   & img {
     width: 100%;
     border-radius: 10px 10px 0 0;
